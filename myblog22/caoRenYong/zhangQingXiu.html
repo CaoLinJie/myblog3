@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>仁青琼林</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta http-equiv="cache-control" content="no-transform"/>
+<meta content="telephone=no" name="format-detection">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<link href="css/css.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery.min.1.7.js"></script>
+
+</head>
+
+<body>
+
+<div class="video_exist play_yinfu" id="audio_btn" style="display: block;">
+    <div id="yinfu" class="rotate"></div>
+    <audio preload="" autoplay="" id="media" src="music.mp3" loop></audio>
+</div>
+<script type="text/javascript">
+    
+    $('#audio_btn').click(function(){
+        var audioEle = $("#media")[0];
+        if($(this).attr('class').indexOf('off') > 0){
+            $(this).removeClass('off').addClass('play_yinfu');
+            $('#yinfu').addClass('rotate');
+            audioEle.play();
+        }else{
+            $(this).removeClass('play_yinfu').addClass('off');
+            $('#yinfu').removeClass('rotate');
+            audioEle.pause();
+        }
+    });
+	
+	$(document).ready(function(){
+/*	 $(".ydzx").click(function(){ 
+		$('.ydzx').addClass("a-flipoutY");
+		$('#mcover1').addClass("a-fadeout page2_6");
+	 }); */
+	 
+	 $("#closebook").click(function(){ 
+		$('#mcover').addClass("a-fadein");
+		$('.ydxz1').addClass("a-flipinY");
+		$('.ydxz1_pages1').addClass("a-flipinY");
+		$('.ydxz1_pages2').addClass("a-flipinY");
+		$('.ydxz1_pages3').addClass("a-flipinY");
+		$('.ydxz1_pages4').addClass("a-flipinY");
+		$('.ydxz2').addClass("a-fadeins page2_10");
+	 }); 
+ }); 
+
+ function fun2(op){
+	var pw = prompt("请输入密码获取查看权限:",""); 
+	if(pw==null || pw==""){
+		alert("密码不能为空")
+	}else{
+		if(op==2){
+			if(pw=="0513"){
+				window.location.href="qywh2.html";
+			}else{
+				alert("密码错误")
+			}
+		}else if(op==3){
+			if(pw=="0728"){
+				window.location.href="qywh3.html";
+			}else{
+				alert("密码错误")
+			}
+		}else if(op==4){
+			if(pw=="1010"){
+				window.location.href="qywh4.html";
+			}else{
+				alert("密码错误")
+			}
+		}else if(op==5){
+			if(pw=="0522"){
+				window.location.href="qywh5.html";
+			}else{
+				alert("密码错误")
+			}
+		}else if(op==1){
+			if(pw=="9999"){
+				window.location.href="qywh.html";
+			}else{
+				alert("密码错误")
+			}
+		}
+		
+	}
+ }
+
+ 
+</script>
+
+<div class="logo"><img src="img/logo.png"></div>
+    <div class="cz"><img src="img/cz.png"></div>
+    <div class="text1"><img src="img/text.png"></div>
+    <div class="menu">
+    	<ul>
+        	<li><a href="javascript:fun2(2)"><img src="img/menu2.png"></a></li>
+        	<li><a href="javascript:fun2(3)"><img src="img/menu3.png"></a></li>
+        	<li><a href="javascript:fun2(4)"><img src="img/menu4.png"></a></li>
+        	<li><a href="javascript:fun2(5)"><img src="img/menu5.png"></a></li>
+			<li><a href="javascript:fun2(1)"><img src="img/menu1.png"></a></li>
+            <div class="height">　　</div>
+        </ul>
+    </div>
+</body>
+</html>
