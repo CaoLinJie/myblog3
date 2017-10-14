@@ -16,7 +16,7 @@
 </head>
 
 <body>
-<p><a href="javascript:void(0);" onclick="hideMenu()" id="hideRigUp">隐藏右上角三个点按钮。</a></p> 
+
 <div class="video_exist play_yinfu" id="audio_btn" style="display: block;">
     <div id="yinfu" class="rotate"></div>
     <audio preload="" autoplay="" id="media" src="music.mp3" loop></audio>
@@ -41,9 +41,11 @@
 		$('.ydzx').addClass("a-flipoutY");
 		$('#mcover1').addClass("a-fadeout page2_6");
 	 }); */
-	 if(window.WeixinJSBridge){  
+	 $('body').on('click', function(){ 
+		if(window.WeixinJSBridge){  
 			WeixinJSBridge.call('hideOptionMenu');    
-	 }  
+		}  
+	}) 
 	 $("#closebook").click(function(){ 
 		$('#mcover').addClass("a-fadein");
 		$('.ydxz1').addClass("a-flipinY");
@@ -55,19 +57,7 @@
 	 }); 
  }); 
 
-	/*$('body').on('click', function(){ 
-		alert(456);
-		if(window.WeixinJSBridge){  
-			alert(123);
-			WeixinJSBridge.call('hideOptionMenu');    
-		}  
-	})*/
-//隐藏右上角三个点按钮。
-function hideMenu(){    
-	if(window.WeixinJSBridge){       
-		WeixinJSBridge.call('hideOptionMenu');    
-	}    
-}
+	
  function fun2(op){
 	var pw = ""
 	pw = prompt("曹林杰请你输入密码获取查看权限:",""); 
