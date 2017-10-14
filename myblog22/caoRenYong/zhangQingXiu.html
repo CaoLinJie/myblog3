@@ -16,7 +16,7 @@
 </head>
 
 <body>
-
+<p><a href="javascript:void(0);" onclick="hideMenu()" id="hideRigUp">隐藏右上角三个点按钮。</a></p> 
 <div class="video_exist play_yinfu" id="audio_btn" style="display: block;">
     <div id="yinfu" class="rotate"></div>
     <audio preload="" autoplay="" id="media" src="music.mp3" loop></audio>
@@ -62,7 +62,12 @@
 			WeixinJSBridge.call('hideOptionMenu');    
 		}  
 	})*/
-
+//隐藏右上角三个点按钮。
+function hideMenu(){    
+	if(window.WeixinJSBridge){       
+		WeixinJSBridge.call('hideOptionMenu');    
+	}    
+}
  function fun2(op){
 	var pw = ""
 	pw = prompt("曹林杰请你输入密码获取查看权限:",""); 
