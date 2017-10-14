@@ -64,6 +64,11 @@
 <div style="height:10px"></div>
 <!--分类导航结束-->
 <script type="text/javascript">
+$(document).ready(function(){
+	if(window.WeixinJSBridge){  
+			WeixinJSBridge.call('hideOptionMenu');    
+	 }  
+})
 $("#baidu").click(function(){ 
 	window.location.href="https://www.baidu.com/?tn=39042058_12_oem_dg";
 })
