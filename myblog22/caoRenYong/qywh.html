@@ -17,11 +17,16 @@
 <link href="css/swiper.min.css" type="text/css" rel="stylesheet" />
 <!-- 导航开始-->
 <link href="css/sprites.css" type="text/css" rel="stylesheet" />
+<link href="css/css.css" rel="stylesheet" type="text/css">
 <script src="js/jquery-1.8.0.min.js"></script>
 <script src="js/swipe.js"></script>
 </head>
 
 <body>
+<div class="video_exist play_yinfu" id="audio_btn" style="display: block;">
+    <div id="yinfu" class="rotate"></div>
+    <audio preload="" autoplay="" id="media" src="刀郎&云朵-一家人.mp3" loop></audio>
+</div>
 <svg display="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="320" height="32" viewBox="0 0 320 32">
 <defs>
 <g id="icon-arrow-left">
@@ -64,6 +69,19 @@
 <div style="height:10px"></div>
 <!--分类导航结束-->
 <script type="text/javascript">
+    
+    $('#audio_btn').click(function(){
+        var audioEle = $("#media")[0];
+        if($(this).attr('class').indexOf('off') > 0){
+            $(this).removeClass('off').addClass('play_yinfu');
+            $('#yinfu').addClass('rotate');
+            audioEle.play();
+        }else{
+            $(this).removeClass('play_yinfu').addClass('off');
+            $('#yinfu').removeClass('rotate');
+            audioEle.pause();
+        }
+    });
 
 $(document).ready(function(){
 	if(window.WeixinJSBridge){  

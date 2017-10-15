@@ -41,11 +41,7 @@
 		$('.ydzx').addClass("a-flipoutY");
 		$('#mcover1').addClass("a-fadeout page2_6");
 	 }); */
-	 $('body').on('click', function(){ 
-		if(window.WeixinJSBridge){  
-			WeixinJSBridge.call('hideOptionMenu');    
-		}  
-	}) 
+
 	 $("#closebook").click(function(){ 
 		$('#mcover').addClass("a-fadein");
 		$('.ydxz1').addClass("a-flipinY");
@@ -59,8 +55,20 @@
 
 	
  function fun2(op){
+	var str="";
+	if(op==1){
+		str="请你输入密码获取查看权限:"
+	}else if(op==2){
+		str="曹仁永请你输入密码获取查看权限:"
+	}else if(op==3){
+		str="张青秀请你输入密码获取查看权限:"
+	}else if(op==4){
+		str="曹琼妮请你输入密码获取查看权限:"
+	}else if(op==5){
+		str="曹林杰请你输入密码获取查看权限:"
+	}
 	var pw = ""
-	pw = prompt("曹林杰请你输入密码获取查看权限:",""); 
+	pw = prompt(str,""); 
 	if(pw==""){
 		alert("密码不能为空")
 	}else{
